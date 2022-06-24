@@ -5,19 +5,19 @@ module.exports = function toReadable (number) {
     const hundred = 'hundred'
 
     if(number<20){
-        console.log(zeroNineteen[number])
+        return (zeroNineteen[number])
     } else if(number>19 && number < 100 && number%10){
-        console.log(twentyNinety[String(number).charAt(0)-2] + ' ' + zeroNineteen[String(number).charAt(1)])
+        return (twentyNinety[String(number).charAt(0)-2] + ' ' + zeroNineteen[String(number).charAt(1)])
     }else if(number>19 && number < 100 && !(number%10)){
-        console.log(twentyNinety[String(number).charAt(0)-2])
+        return (twentyNinety[String(number).charAt(0)-2])
     }else if(!(number%100) ){
-        console.log(zeroNineteen[String(number).charAt(0)] + ' ' + hundred )
+        return (zeroNineteen[String(number).charAt(0)] + ' ' + hundred )
     } else if(number>100 && String(number).charAt(1) == 0 ) {
-        console.log(zeroNineteen[String(number).charAt(0)] + ' ' + hundred + ' ' + zeroNineteen[String(number).charAt(2)])
+        return (zeroNineteen[String(number).charAt(0)] + ' ' + hundred + ' ' + zeroNineteen[String(number).charAt(2)])
     } else if(String(number).slice(1)<20 && number>100 ) {
-       console.log(zeroNineteen[String(number).charAt(0)] + ' ' + hundred + ' ' + zeroNineteen[String(number).slice(1)] )
+       return (zeroNineteen[String(number).charAt(0)] + ' ' + hundred + ' ' + zeroNineteen[String(number).slice(1)] )
     }else if(number>100 ) {
-        console.log(zeroNineteen[String(number).charAt(0)] + ' ' + hundred + ' ' + 
+        return (zeroNineteen[String(number).charAt(0)] + ' ' + hundred + ' ' + 
         (String(number).charAt(2) == 0  ? twentyNinety[String(number).charAt(1)-2]  : twentyNinety[String(number).charAt(1)-2] + ' ' + zeroNineteen[String(number).charAt(2)]) )
     }
   
